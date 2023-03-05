@@ -1,0 +1,23 @@
+<div>
+    <h1>URL Shortener</h1>
+    <br />
+    <br />
+    <blockquote>
+        <p>
+            Shortener makes long links look cleaner and easier to share! Add your own Custom Domains to personalize your
+            brand!
+        </p>
+    </blockquote>
+
+    <form [formGroup]="linkForm">
+        <input text="link" formControlName="link" placeholder="Paste a link to shorten" />
+
+        <button (click)="shortenLink()" [disabled]="linkForm.invalid" *ngIf="linkForm.value.link.length>8">Shorten >></button>
+        <button (click)="reverseUrl()" [disabled]="linkForm.invalid && linkForm.value.link.length>8" *ngIf="linkForm.value.link.length===8" class="reverseShortUrl">Reverse Url</button>
+    </form>
+
+    <br/>
+    <div>
+        <a *ngIf="urlData" (click)="redirectUrl()">{{urlData.shortenedUrl}}</a>
+    </div>
+</div>

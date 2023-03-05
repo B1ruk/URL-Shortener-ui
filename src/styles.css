@@ -1,0 +1,12 @@
+input{
+    min-width: 50vw;
+}/* You can add global styles to this file, and also import other style files */
+
+a{
+    cursor: pointer;
+}
+
+.reverseShortUrl{
+    background-color: bisque;
+    color: black;
+}
